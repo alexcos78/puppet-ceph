@@ -27,6 +27,7 @@ class ceph::profile::base {
 
     class { '::ceph::repo':
       release => $ceph::profile::params::release,
+      fastcgi =>  $ceph::profile::params::fastcgi,
     }
   }
 

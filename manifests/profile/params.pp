@@ -110,6 +110,9 @@
 # [*rgw_frontends*] Arguments to the rgw frontend
 #   Optional. Default is 'fastcgi socket_port=9000 socket_host=127.0.0.1'. Example: "civetweb port=7480"
 #
+# [*fastcgi*] Arguments to the apache-fastcgi installation
+#   Optional. Default is 'false'.
+#
 
 class ceph::profile::params (
   $fsid = undef,
@@ -135,6 +138,7 @@ class ceph::profile::params (
   $rgw_print_continue = false,
   $frontend_type = 'apache-fastcgi',
   $rgw_frontends = 'fastcgi socket_port=9000 socket_host=127.0.0.1',
+  $fastcgi = false,
 ) {
   validate_hash($client_keys)
 
